@@ -1,0 +1,11 @@
+<!--pages/publish/publish.wxml-->
+<view>
+    <view class='add_btn'>
+        <button class='btn' bindtap="to_demand">发布需求
+        </button>
+    </view>
+    <view class='add_btn'>
+        <button class='btn' bindtap="to_fuwu">发布服务
+        </button>
+    </view>
+</view>

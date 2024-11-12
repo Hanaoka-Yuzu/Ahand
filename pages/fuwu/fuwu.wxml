@@ -1,0 +1,33 @@
+<!--pages/fuwu/fuwu.wxml-->
+<view class='page'>
+<view class="formRow">
+    <text class='chooseService'>选择服务的类别</text>
+    <van-dropdown-menu active-color="#1989fa">
+    <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" bind:change="switchChoices"/>
+    <view wx:if="{{value1===1}}">
+        <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" bind:change="switchChoice"/>
+    </view>
+    <view wx:elif="{{value1===2}}">
+        <van-dropdown-item value="{{ value2 }}" options="{{ option3 }}" bind:change="switchChoice"/>
+    </view>
+    <view wx:elif="{{value1===3}}">
+        <van-dropdown-item value="{{ value2 }}" options="{{ option4 }}" bind:change="switchChoice"/>
+    </view>
+    <view wx:elif="{{value1===4}}">
+        <van-dropdown-item value="{{ value2 }}" options="{{ option5 }}" bind:change="switchChoice"/>
+    </view>
+    <view wx:elif="{{value1===5}}">
+        <van-dropdown-item value="{{ value2 }}" options="{{ option6 }}" bind:change="switchChoice"/>
+    </view>
+    
+</van-dropdown-menu>
+</view>
+
+<d-form formData="{{formData}}" showSubmitBtn="{{false}}" toSubmit="{{toSubmit}}" bind:dynamicFormChange="onFormChange" bind:dynamicFormSubmit="onFormSubmit"></d-form>
+
+<view class='button2'>
+  <button bindtap='toSubmitChange'>提交</button>
+  <button bindtap='tocancel'>取消</button>
+</view>
+
+</view>

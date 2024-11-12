@@ -1,0 +1,18 @@
+<!--pages/message/message.wxml-->
+<view class="news">
+  <view class="user" wx:if="{{userInfo}}">
+    <image class="userImg" src="{{userInfo.avatarUrl}}" data-src="{{userInfo.avatarUrl}}" bindtap="previewImg"></image>
+    <view class="userNickName">
+      <text class="nickName">{{userInfo.nickName}}</text>
+    </view>
+  </view>
+  <scroll-view class="friendList" scroll-y="true" scroll-top="{{scrollTop}}">
+    <block wx:for="{{friendList}}" wx:key>
+      <view class="friendInfo" style="text-align: left; padding-left: 20rpx" value="{{item}}" data-info="{{item}}" bindtap="tapFriend">
+        <image class="friendImage" src="{{item.avatar}}"></image>
+        <view class="friendNickname">{{item.nickname}}</view>
+      </view>
+      <view class="split-line"></view>
+    </block>
+  </scroll-view>
+</view>

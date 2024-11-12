@@ -1,0 +1,102 @@
+<!--pages/me/me-->
+
+<!--用户头像和昵称-->
+<view class="userInformation">
+  <view class="userInfomation-avatar">
+    <image src="{{avatar}}" mode="widthFix"></image>
+  </view>
+  <view class="userInformation-nickname">
+    <text>{{nickname}}</text>
+  </view>
+</view>
+
+<!-- <view class="graydivide"></view>
+<view class='function'>
+  <view style="width:100%">
+    <view class="functioninformation" bindtap="to_phone_number">
+      <view class="left-icon">
+        <image class="icon-picture" src="../../images/签到.png"></image>
+      </view>
+      <view class="text">签到</view>
+      <view class="right-icon">
+        <image class="icon-picture" src="../../images/箭头.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="whitedivide"></view> -->
+
+<view class='function'>
+  <view style="width:100%">
+    <view class="functioninformation">
+      <view class="left-icon">
+        <image class="icon-picture" src="https://ahand.club/file/download/DEFAULT_IMG/3.png"></image>
+      </view>
+      <view class="text">积分：{{signednum}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="graydivide"></view>
+<view class='function'>
+  <view style="width:100%">
+    <view class="functioninformation" bindtap="sign">
+      <view class="left-icon">
+        <image class="icon-picture" src="https://ahand.club/file/download/DEFAULT_IMG/4.png"></image>
+      </view>
+      <view class="text">每日签到</view>
+      <view class="right-icon">
+        <image class="icon-picture" src="https://ahand.club/file/download/DEFAULT_IMG/8.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='function'>
+  <view style="width:100%">
+    <view class="functioninformation">
+      <view class="left-icon">
+        <image class="icon-picture" src="https://ahand.club/file/download/DEFAULT_IMG/6.png"></image>
+      </view>
+      <view class="text" bindtap="to_fabu">已发布</view>
+      <view class="right-icon">
+        <image class="icon-picture" src="https://ahand.club/file/download/DEFAULT_IMG/8.png"></image>
+      </view>
+    </view>
+
+    <view class="functioninformation">
+      <view class="left-icon">
+        <image class="icon-picture" src="https://ahand.club/file/download/DEFAULT_IMG/7.png"></image>
+      </view>
+      <view class="text" bindtap="to_fachu">发出的申请</view>
+      <view class="right-icon">
+        <image class="icon-picture" src="https://ahand.club/file/download/DEFAULT_IMG/8.png"></image>
+      </view>
+    </view>
+
+    <view class="functioninformation">
+      <view class="left-icon">
+        <image class="icon-picture" src="https://ahand.club/file/download/DEFAULT_IMG/5.png"></image>
+      </view>
+      <view class="text" bindtap="to_shenqing">收到的申请</view>
+      <view class="right-icon">
+        <image class="icon-picture" src="https://ahand.club/file/download/DEFAULT_IMG/8.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- <view class='function'>
+  <view style="width:100%">
+    <view class="functioninformation">
+      <view class="left-icon">
+        <image class="icon-picture" src="../../images/接收.png"></image>
+      </view>
+      <view class="text">已接收</view>
+      <view class="right-icon">
+        <image class="icon-picture" src="../../images/箭头.png"></image>
+      </view>
+    </view>
+    
+  </view>
+</view> -->

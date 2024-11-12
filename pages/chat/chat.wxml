@@ -1,0 +1,78 @@
+<!--pages/chat/chat.wxml-->
+<view class="body">
+	<view class="header">
+		<!-- 官方自定义导航栏抽取出来的模块 -->
+		<view class="navigation">
+			<view class="weui-navigation-bar {{extClass}}">
+				<view class="weui-navigation-bar__placeholder {{ios ? 'ios' : 'android'}}" style="padding-top: {{statusBarHeight}}px;visibility: hidden;"></view>
+				<view class="weui-navigation-bar__inner {{ios ? 'ios' : 'android'}}" style="padding-top: {{statusBarHeight}}px; color: {{color}};background: {{background}};{{displayStyle}};{{innerPaddingRight}};{{innerWidth}}">
+				  <!-- 左边的返回按钮图标，根据需求删除，记得把多余的css和js也删了 -->
+					<view class='weui-navigation-bar__left' style="{{leftWidth}}"  bindtap="back">
+						<view class="weui-navigation-bar__buttons">
+							<view class="weui-navigation-bar__button weui-navigation-bar__btn_goback"></view>
+						</view>
+					</view>
+					<view class='weui-navigation-bar__center'>
+						<!-- 自定义导航标题 -->
+						<view class="navigation-title">{{friend_nickName}}</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="footer"></view>
+</view>
+
+<view class='news' bindtap="outbtn">
+  <view class="history">
+    <scroll-view class="history-msg" scroll-y="{{true}}" scroll-top="{{scrollTop}}" scroll-with-animation="{{true}}" bindscrolltoupper="topLoad" bindscrolltolower="toBottom">
+      <block wx:for="{{listList}}" wx:key="{{index}}">
+        <block wx:for="{{item}}" wx:key="{{index}}">
+          <view class="news-date" bindtap="test" data-item="{{item}}">{{item.date}}</view>
+          <!--my message-->
+          <view class="my-chat-news" wx:if="{{item.a_nickName==userInfo.nickName}}">
+            <view class="sub-view" style="text-align: right;padding-right: 20rpx">
+              <block class="my-news-block" wx:if="{{item.type=='text'}}">
+                <view class="my-news-content">{{item.content}}</view>
+              </block>
+              <block class="my-news-block" wx:if="{{item.type=='image'}}">
+                <view class="news-image-view">
+                  <image class="news-image" src="{{item.content}}" mode="widthFix" data-src="{{item.content}}" bindtap="previewImg" lazy-load="true"></image>
+                </view>
+              </block>
+              <view class="img-view">
+                <image class="img" src="{{item.a_avatarUrl}}"></image>
+              </view>
+              
+            </view>
+          </view>
+          <!--others' message-->
+          <view class="friend-chat-news" wx:else>
+            <view class="sub-view-2" style="text-align: left; padding-left: 20rpx">
+              <view>
+                <image class="img" src="{{item.b_avatarUrl}}"></image>
+              </view>
+              <block wx:if="{{item.type=='text'}}">
+                <view class="friend-news-content">{{item.content}}</view>
+              </block>
+              <block wx:if="{{item.type=='image'}}">
+                <view class="news-image-view">
+                  <image class="news-image" src="{{item.content}}" mode="widthFix" data-src="{{item.content}}" bindtap="previewImg" lazy-load="true"></image>
+                </view>
+              </block>
+            </view>
+          </view>
+        </block>
+      </block>
+      <view id="flag" class="flag"></view>
+    </scroll-view>
+  </view>
+</view>
+<!--input-->
+<view id="flag"></view>
+<view class="input">
+  <textarea class="input-box" bindinput="bindInput" bindconfirm='send' adjust-position='{{true}}' placeholder='' confirm-type='send' bindfocus='focus' bindblur='blur' auto-height="{{true}}" value="{{message}}"></textarea>
+  <image class="icon-picture" src="../../images/add.png" mode='widthFix' bindtap="chooseImg"></image>
+</view>
+
+

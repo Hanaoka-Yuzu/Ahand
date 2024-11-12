@@ -1,0 +1,21 @@
+<view class='release' wx:for='{{dataList}}' wx:key='list' wx:for-item="item">
+    <view wx:if="{{item.ishas==true}}" bindtap='productDetail'>  
+      <text class='out'>{{item.cate}}</text>
+      <view class='release_text'>需求描述：{{item.desc}}</view>
+      <image style="padding-top: 30rpx;" wx:if="{{item.have1==true}}" src="{{item.pic1}}"></image>
+      <image style="padding-top: 30rpx;" wx:if="{{item.have2==true}}" src="{{item.pic2}}"></image>
+      <text class='release_money'>￥{{item.budget}}</text>
+      <text class='release_ddl'>状态:{{item.endDate}}</text>
+      <text class='release_address'>地址:{{item.address}}</text>
+      <view class='button'>
+        <button data-productid='{{item.id}}' bindtap='watchdetail'>查看</button>
+      </view>
+    </view>
+  </view>
+ 
+<view class='button2'>
+  <button bindtap='lastpage'>上一页</button>
+  <text class='ttt'>第{{nowpage}}页,共{{totalpage}}页</text>
+  <button bindtap='nextpage'>下一页</button>
+</view>
+

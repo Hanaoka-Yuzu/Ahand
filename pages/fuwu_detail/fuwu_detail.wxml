@@ -1,0 +1,40 @@
+<!--pages/fuwu_detail/fuwu_detail.wxml-->
+
+<swiper style="height:720rpx" indicator-dots="true" autoplay="true" interval="3000" duration="300" >
+  <block wx:for="{{picture}}">
+    <swiper-item>
+      <view class="img-view">
+        <image src="{{item}}" class="img" mode="heightFix" data-src="{{picture}}" bindtap="preview"></image>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+<scroll-view scroll-y="true">
+  <view class="detail">
+    <view class="des-description">
+      <view class="title">服务描述：</view>
+      <view class="content-des">{{desc}}</view>
+    </view>
+    <view class="split-line"></view>
+    <view class="des">
+      <view class="title">服务分类：</view>
+      <view class="content">{{cate}}</view>
+    </view>
+    <view class="split-line"></view>
+    <view class="des">
+      <view class="title">联系人：</view>
+      <view class="content">{{truename}}</view>
+    </view>
+    <view class="split-line"></view>
+    <view class="des">
+      <view class="title">联系qq：</view>
+      <view class="content">{{qq}}</view>
+    </view>
+    <view class="split-line"></view>
+    <view class="des">
+      <view class="title">地址：</view>
+      <view class="content">{{address}}</view>
+    </view>
+
+  </view>
+</scroll-view>

@@ -1,0 +1,57 @@
+<!--pages/item_detail/item_detail.wxml-->
+<swiper style="height:720rpx" indicator-dots="true" autoplay="true" interval="3000" duration="300" >
+  <block wx:for="{{picture}}">
+    <swiper-item>
+      <view class="img-view">
+        <image src="{{item}}" class="img" mode="heightFix" data-src="{{picture}}" bindtap="preview"></image>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+<scroll-view scroll-y="true">
+  <view class="detail">
+    <view class="des-description">
+      <view class="title">需求描述：</view>
+      <view class="content-des">{{desc}}</view>
+    </view>
+    <view class="split-line"></view>
+    <view class="des">
+      <view class="title">需求分类：</view>
+      <view class="content">{{cate}}</view>
+    </view>
+    <view class="split-line"></view>
+    <view class="des">
+      <view class="title">预算：</view>
+      <view class="price">￥{{budget}}</view>
+    </view>
+    <view class="split-line"></view>
+    <view class="des">
+      <view class="title">起止日期：</view>
+      <view class="content">{{startDate}} ~ {{endDate}}</view>
+    </view>
+    <view class="split-line"></view>
+    <view class="des">
+      <view class="title">申请人：</view>
+      <view class="content">{{truename}}</view>
+    </view>
+    <view class="split-line"></view>
+    <view class="des">
+      <view class="title">联系qq：</view>
+      <view class="content">{{qq}}</view>
+    </view>
+    <view class="split-line"></view>
+    <view class="des">
+      <view class="title">地址：</view>
+      <view class="content">{{address}}</view>
+    </view>
+
+  </view>
+  <!-- <view class="separate"></view>
+  <text bindtap="toggleDialog">请选择购买数量</text>
+  <view class="separate"></view>
+  <text>商品评价</text>
+  <text class="text-remark">东西还可以，好评~</text>
+  <view class="separate"></view>
+  <text>商品详情</text>
+  <view class="temp"></view> -->
+</scroll-view>
